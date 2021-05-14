@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <form action="" method="post">
+    <form action="{{ rote('salvar_aluno')}} " method="post">
     @csrf
         <div><label for="nome">Nome</label><input type="text" name="nome" id="nome"></div>
         <div><label for="email">E-mail</label><input type="text" name="email" id="email"></div>

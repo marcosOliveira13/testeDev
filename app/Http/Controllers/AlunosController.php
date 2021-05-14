@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\aluno;
+use App\Models\Aluno;
 class AlunosController extends Controller
 {
     public function create(){
@@ -17,5 +17,9 @@ class AlunosController extends Controller
             
         ]);
         return "Aluno salvo com sucesso";
+    }
+    public function show(){
+        $alunos = Aluno::all();
+        return view('aluno.todos',['alunos'=>$alunos]);
     }
 }
