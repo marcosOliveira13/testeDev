@@ -21,3 +21,5 @@ route::get('/aluno/novo','AlunosController@create');
 route::post('/aluno/novo','AlunosController@store')->name('salvar_aluno');
 route::get('/aluno/ver','AlunosController@show');
 route::get('/aluno/del/{id}','AlunosController@destroy')->name('excluir_aluno');
+route::get('/aluno/edit/{id}','AlunosController@edit')->name('editar_aluno');
+route::post('/aluno/edit/{id}','AlunosController@update')->name('atualizar_aluno');

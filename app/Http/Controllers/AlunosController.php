@@ -27,4 +27,20 @@ class AlunosController extends Controller
         $aluno->delete();
         return("Aluno Excluído com sucessol!");
     }
+    public function edit($id){
+        $aluno = Aluno::findOrFail($id);
+        return view('aluno.editar',['aluno'=>$aluno]);
+
+    }
+    public function update(Request $request, $id){
+        $aluno = Aluno::findOrFail($id);
+        $aluno->update([
+            'nome'=> $request->nome,
+            'email'=> $request->email,
+            'data_nascimento'=> $request->data_nascimento,
+
+        ]);
+        return("Aluno Atualizado com Sucesso!");
+
+    }
 }
