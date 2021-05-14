@@ -22,4 +22,9 @@ class AlunosController extends Controller
         $alunos = Aluno::all();
         return view('aluno.todos',['alunos'=>$alunos]);
     }
+    public function destroy($id){
+        $aluno= Aluno::findOrFail($id);
+        $aluno->delete();
+        return("Aluno Excluído com sucessol!");
+    }
 }

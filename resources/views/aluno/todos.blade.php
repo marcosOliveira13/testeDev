@@ -13,10 +13,10 @@
     <tr>
         <td>{{$aluno->nome}}</td>
         <td>{{$aluno->email}}</td>
-        <td>{{$aluno->data_nascimento}}</td>        
-       <td><a href="">Editar</a></td>
-        <td><a href="">Excluir</a></td>
+        <td>{{$aluno->data_nascimento}}</td>     
+        <td><a href="{{ route('excluir_aluno', ['id' =>$aluno->id]) }}"
+        title="Excluir Aluno {{$aluno->nome}}" >Excluir</a></td>
     </tr>
-    @endforeach    
+    @endforeach
 </body>
 </html>
