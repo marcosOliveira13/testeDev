@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/aluno/novo','AlunosController@create');
+route::post('/aluno/nvo','AlunoController@store')->name('salvar_aluno');
