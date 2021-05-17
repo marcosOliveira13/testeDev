@@ -8,12 +8,14 @@
 </head>
 <body>
     <table>
-    <tr><th>Nome</th><th>Email</th><th>Data de Nascimento</th></tr>
+    <a href="{{route('novo_aluno')}}">Cadastrar Aluno</a>
+    <tr><th>Nome</th><th>Email</th><th>Data de Nascimento</th><th>Curso</th></tr>
     @foreach($alunos as $aluno)
     <tr>
         <td>{{$aluno->nome}}</td>
         <td>{{$aluno->email}}</td>
         <td>{{$aluno->data_nascimento}}</td> 
+        <td>{{$aluno->curso}}</td> 
         <td><a href="{{ route('editar_aluno', ['id'=>$aluno->id]) }}"
         title="Editar Aluno {{$aluno->nome}}">Editar</a></td>    
         <td><a href="{{ route('excluir_aluno', ['id' =>$aluno->id]) }}"

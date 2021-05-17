@@ -16,10 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-route::get('/aluno/novo','AlunosController@create');
+//Rotas para Aluno:
+//cadastro de alunos
+route::get('/aluno/novo','AlunosController@create')->name('novo_aluno');
 route::post('/aluno/novo','AlunosController@store')->name('salvar_aluno');
+//mostrar alunos cadastrados 
 route::get('/aluno/ver','AlunosController@show');
+//excluir alunos cadastrados
 route::get('/aluno/del/{id}','AlunosController@destroy')->name('excluir_aluno');
+//editar alunos cadastrados 
 route::get('/aluno/edit/{id}','AlunosController@edit')->name('editar_aluno');
 route::post('/aluno/edit/{id}','AlunosController@update')->name('atualizar_aluno');
+
+//rotas para cursos:
+//cadastro de cursos 
+route::get('/curso/novo','CursosController@create')->name ('novo_curso');
+route::post('/curso/novo','CursosController@store')->name('salvar_curso');
+//mostrar cursos cadastrados 
+route::get('/curso/ver','CursosController@show');
+//excluir cursos cadastrados
+route::get('/curso/del/{id}','CursosController@destroy')->name('excluir_curso');
+//editar curso
+route::get('/curso/edit/{id}','CursosController@edit')->name('editar_curso');
+route::post('/curso/edit{id}','CursosController@update')->name('atualizar_curso');
+//reliza matricula
+route::get('/matricula/nova','MatriculaController@create')->name ('nova_matricula');
+route::post('/matricula/nova','MatriculaController@store')->name('salvar_matricula');

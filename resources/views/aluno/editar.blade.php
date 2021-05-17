@@ -17,9 +17,16 @@
 
     <form action="{{route('atualizar_aluno',['id'=>$aluno->id]) }}" method="post">
     @csrf
-        <div><label for="nome">Nome</label><input type="text" name="nome" id="nome" value="{{$aluno->nome}}"></div>
-        <div><label for="email">E-mail</label><input type="text" name="email" id="email"value="{{$aluno->email}}"></div>
-        <div><label for="data_nascimento">Data de Nasciemnto</label><input type="text" name="data_nascimento" id="data_nascimento" value="{{$aluno->data_nascimento}}"></div>        
+        <div><label for="nome">Nome</label><input type="text" name="nome" id="nome" value="{{$aluno->nome}}" required></div>
+        <div><label for="email">E-mail</label><input type="email" name="email" id="email"  value="{{$aluno->email}}" required></div>
+        <div><label for="data_nascimento">Data de Nasciemnto</label><input type="date" name="data_nascimento" id="data_nascimento" value="{{$aluno->data_nascimento}}" required></div> 
+        <br>
+        <div><label for="curso">Curso</label><select name="curso" id="curso" required>
+        <option value="{{$aluno->curso}}">{{$aluno->curso}}</option>
+        @foreach($cursos as $curso) 
+        <option value="{{$curso->titulo}}">{{$curso->titulo}}</option>
+        @endforeach
+        </select></div>       
         <button type="submit">Salvar</button>
     </form>     
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar novo aluno</title>
+    <title>Criar matrícula</title>
     <style>
         label{
             float: left;
@@ -15,18 +15,20 @@
 </head>
 <body>
 
-    <form action="{{ route('salvar_aluno') }} " method="post">
+    <form action="{{ route('salvar_matricula') }}" method="post">
     @csrf
-        <div><label for="nome">Nome</label><input type="text" name="nome" id="nome" required></div>
-        <div><label for="email">E-mail</label><input type="email" name="email" id="email" required></div>
-        <div><label for="data_nascimento">Data de Nascimento</label><input type="date" name="data_nascimento" id="data_nascimento"></div>   
+        <div><label for="aluno">Aluno</label><select name="aluno" id="aluno"required>        
+        @foreach($alunos as $aluno) 
+        <option value="{{$aluno->id}}">{{$aluno->nome}}</option>       
+        @endforeach
+        </select></div>
         <br>
         <div><label for="curso">Curso</label><select name="curso" id="curso" required>
         @foreach($cursos as $curso) 
-        <option value="{{$curso->titulo}}">{{$curso->titulo}}</option>
+        <option value="{{$curso->id}}">{{$curso->titulo}}</option>
         @endforeach
-        </select></div>     
+        </select></div>       
         <button type="submit">Salvar</button>
-    </form>
+    </form>     
 </body>
 </html>
