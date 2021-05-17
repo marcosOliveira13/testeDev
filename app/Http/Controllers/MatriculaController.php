@@ -22,4 +22,9 @@ class MatriculaController extends Controller
         ]);
         return ("Matricula realizada com sucesso");
     }
+    public function show(){
+        $alunos = Aluno::all();
+        $cursos = Curso::all();
+        return view('matricula.todos',['alunos'=>$alunos], ['cursos'=>$cursos]);
+    }
 }

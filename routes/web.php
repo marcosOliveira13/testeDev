@@ -42,3 +42,4 @@ route::post('/curso/edit{id}','CursosController@update')->name('atualizar_curso'
 //reliza matricula
 route::get('/matricula/nova','MatriculaController@create')->name ('nova_matricula');
 route::post('/matricula/nova','MatriculaController@store')->name('salvar_matricula');
+route::get('/matricula/ver','MatriculaController@show');
