@@ -18,8 +18,7 @@ class CreateAlunosTable extends Migration
             //crete tabelas aluno
             $table->string('nome');
             $table ->string('email');
-            $table ->date('data_nascimento');
-            $table ->string('curso');
+            $table ->date('data_nascimento');            
 
             $table->timestamps();
         });
