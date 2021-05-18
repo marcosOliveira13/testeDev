@@ -1,0 +1,22 @@
+instruções para instalação
+
+salvar todo o diretorio no servidor
+
+acessar o aruivo '.env' e inserir as informaçoes do  endereço do banco e dados, 
+o nome do co banco, ususario e senha, podendo criar um banco com o mesmo nome já definido: "teste_dev"
+nos respectivos campos:
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=teste_dev
+DB_USERNAME=root
+DB_PASSWORD=null
+
+para inserção da tabela é necessario dar os seguintes comandos:
+
+php artisan migrate 
+
+para iniciar o laravel, execultar o camndo:  php artisan serve 
+
+abrir em localhost:8000/'rotas_do_projeto'/

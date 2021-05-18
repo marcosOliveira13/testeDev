@@ -43,3 +43,8 @@ route::post('/curso/edit{id}','CursosController@update')->name('atualizar_curso'
 route::get('/matricula/nova','MatriculaController@create')->name ('nova_matricula');
 route::post('/matricula/nova','MatriculaController@store')->name('salvar_matricula');
 route::get('/matricula/ver','MatriculaController@show');
+//eclui matricula
+route::get('/matricula/del/{id}','MatriculaController@destroy')->name('excluir_matricula');
+//editar curso
+route::get('/matricula/edit/{id}','MatriculaController@edit')->name('editar_matricula');
+route::post('/matricula/edit/{id}','MatriculaController@edit')->name('atualizar_matricula');
